@@ -1,7 +1,8 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
 Version:	0.35.5
-Release:	5
+Release:	6
+Epoch:		2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
