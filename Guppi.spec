@@ -35,6 +35,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	gnumeric >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
+Requires:	ghostscript-fonts-std
 Obsoletes:	libguppi15
 
 %define		_prefix		/usr/X11R6
