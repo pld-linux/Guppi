@@ -4,12 +4,13 @@ Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
 Version:	0.40.3
-Release:	1
+Release:	2
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(es):	X11/Aplicaciones
+Group(fr):	X11/Applications
 Group(pl):	X11/Aplikacje
 Group(pt_BR):	X11/Aplicações
 Group(pt):	X11/Aplicações
@@ -33,7 +34,7 @@ BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	python-devel >= 2.1
+BuildRequires:	python-devel >= 2.2
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	rpm-pythonprov
 BuildRequires:	gnumeric >= 1.0.3
@@ -62,7 +63,7 @@ Summary:	Guppi includes etc.
 Summary(pl):	Guppi - pliki nag³ówkowe
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
+Group(de):	X11/Entwicklung/Bibliotheken
 Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
@@ -88,7 +89,7 @@ Summary:	Guppi static libraries
 Summary(pl):	Biblioteki statyczne Guppi
 Summary(pt_BR):	Bibliotecas estáticas do Guppi
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
+Group(de):	X11/Entwicklung/Bibliotheken
 Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
