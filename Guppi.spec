@@ -1,18 +1,21 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
-Version:	0.35.3
-Release:	2
+Version:	0.35.5
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	ORBit-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	esound-devel
 BuildRequires:	flex
+BuildRequires:	gdk-pixbuf-devel >= 0.8.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
@@ -20,11 +23,10 @@ BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	guile-devel
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
+BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel
 BuildRequires:	readline-devel >= 4.2
-BuildRequires:	gdk-pixbuf-devel >= 0.8.0
-BuildRequires:	esound-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	Guppi-static
@@ -64,13 +66,15 @@ Guppi static libraries.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
-automake -a -c
+automake -a -c -i
 %configure
 %{__make}
 
@@ -79,7 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	appdir=%{_applnkdir}/Graphics
+	appdir=%{_applnkdir}/Graphics \
+	aclocaldir=%{_aclocaldir}
 
 gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 
@@ -116,3 +121,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
+%{_aclocaldir}/*
