@@ -99,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.scm
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.glade
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.png
-%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/lib*.so*
+%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.so*
 
 %{_datadir}/guppi
 %{_datadir}/pixmaps/*
