@@ -106,7 +106,7 @@ Summary(sk):	Hlavièkové súbory pre vývoj Guppi aplikácií
 Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Obsoletes:	libguppi15-devel
 
 %description devel
@@ -186,7 +186,7 @@ Summary(sk):	Statické kni¾nice pre vývoj Guppi aplikácií
 Summary(sl):	Statiène knji¾nice za razvoj programov z Guppi
 Summary(sv):	Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 Guppi static libraries.
