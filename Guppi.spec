@@ -27,13 +27,13 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	flex
-BuildRequires:	gdk-pixbuf-devel >= 0.8.0
+BuildRequires:	gdk-pixbuf-gnome-devel >= 0.8.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	intltool
-BuildRequires:	libglade-devel
+BuildRequires:	libglade-gnome-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
