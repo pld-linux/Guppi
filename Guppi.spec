@@ -3,7 +3,7 @@ Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
 Version:	0.40.2
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
