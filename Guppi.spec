@@ -265,7 +265,7 @@ gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 autoheader
 autoconf
-automake -a -c
+automake -a -c -f
 
 CPPFLAGS="-I%{py_incdir}"; export CPPFLAGS
 
