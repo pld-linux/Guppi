@@ -18,22 +18,6 @@ Release:	4
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
-Group(cs):	X11/Aplikace
-Group(da):	X11/Programmer
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(fr):	X11/Applications
-Group(id):	X11/Aplikasi
-Group(is):	X11/Forrit
-Group(it):	X11/Applicazioni
-Group(ja):	X11/¥¢¥×¥ê¥±¡¼¥·¥ç¥ó
-Group(no):	X11/Applikasjoner
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/Aplicações
-Group(pt):	X11/Aplicações
-Group(ru):	X11/ğÒÉÌÏÖÅÎÉÑ
-Group(sl):	X11/Programi
-Group(sv):	X11/Tillämpningar
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am_ac.patch
 Source1:	%{name}.desktop
@@ -126,22 +110,6 @@ Summary(sk):	Hlavièkové súbory pre vıvoj Guppi aplikácií
 Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Group(cs):	X11/Vıvojové prostøedky/Knihovny
-Group(da):	X11/Udvikling/Biblioteker
-Group(de):	X11/Entwicklung/Bibliotheken
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(is):	X11/Şróunartól/Ağgerğasöfn
-Group(it):	X11/Sviluppo/Librerie
-Group(ja):	X11/³«È¯/¥é¥¤¥Ö¥é¥ê
-Group(no):	X11/Applikasjoner/Biblioteker
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(pt):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(sl):	X11/Razvoj/Knji¾nice
-Group(sv):	X11/Utveckling/Bibliotek
-Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 Requires:	python-devel
 Obsoletes:	libguppi15-devel
@@ -223,22 +191,6 @@ Summary(sk):	Statické kni¾nice pre vıvoj Guppi aplikácií
 Summary(sl):	Statiène knji¾nice za razvoj programov z Guppi
 Summary(sv):	Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Group(cs):	X11/Vıvojové prostøedky/Knihovny
-Group(da):	X11/Udvikling/Biblioteker
-Group(de):	X11/Entwicklung/Bibliotheken
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(is):	X11/Şróunartól/Ağgerğasöfn
-Group(it):	X11/Sviluppo/Librerie
-Group(ja):	X11/³«È¯/¥é¥¤¥Ö¥é¥ê
-Group(no):	X11/Applikasjoner/Biblioteker
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(pt):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(sl):	X11/Razvoj/Knji¾nice
-Group(sv):	X11/Utveckling/Bibliotek
-Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
