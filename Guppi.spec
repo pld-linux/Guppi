@@ -1,19 +1,36 @@
 %include	/usr/lib/rpm/macros.python
 Summary:	Guppi - GNOME Plotting Engine
+Summary(cs):	Analıza a vizualizace dat pod GNOME
+Summary(da):	Gnome-værktøj for analyse og visualisering af data
+Summary(de):	GNOME Datenanalyse und -anzeige
+Summary(es):	Análisis y Visualización de Datos de Gnome
+Summary(fr):	Analyseur et visualiseur de données de Gnome
+Summary(it):	Analisi e Visualizzazione Dati GNOME
+Summary(ja):	GNOME ¥Ù¡¼¥¹¤Î¥Ç¡¼¥¿²òÀÏ¤ª¤è¤Ó»ë³Ğ²½
+Summary(no):	GNOME-verktøy for analyse og visualisering av data
 Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
+Summary(sl):	Analiza podatkov in vizualizacija v GNOME
+Summary(sv):	GNOME dataanalys och -visualisering
 Name:		Guppi
 Version:	0.40.3
 Release:	2
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
+Group(cs):	X11/Aplikace
+Group(da):	X11/Programmer
 Group(de):	X11/Applikationen
 Group(es):	X11/Aplicaciones
 Group(fr):	X11/Applications
+Group(it):	X11/Applicazioni
+Group(ja):	X11/¥¢¥×¥ê¥±¡¼¥·¥ç¥ó
+Group(no):	X11/Applikasjoner
 Group(pl):	X11/Aplikacje
 Group(pt_BR):	X11/Aplicações
 Group(pt):	X11/Aplicações
+Group(ru):	X11/ğÒÉÌÏÖÅÎÉÑ
+Group(sv):	X11/Tillämpningar
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am_ac.patch
 Source1:	%{name}.desktop
@@ -50,6 +67,33 @@ Obsoletes:	libguppi15
 Guppi is an easy-to-use graphical interface for plotting data and
 performing statistical manipulations.
 
+%description -l cs
+Guppi je nástroj pro analızu a vizualizaci dat pro Gnome.
+
+%description -l da
+Guppi er et Gnome-baseret værktøj for analyse og visualisering af
+data.
+
+%description -l de
+Guppi ist ein GNOME-basiertes System zur Datenanalyse und -anzeige.
+
+%description -l es
+Guppi es un sistema de análisis y visualización de datos basado en
+Gnome.
+
+%description -l fr
+Guppi est un analyseur de données et un système de visualisation basé
+sur Gnome.
+
+%description -l it
+Guppi è un sistema di analisi e visualizzazione dati basato su GNOME.
+
+%description -l ja
+Guppi ¤Ï GNOME ¥Ù¡¼¥¹¤Î¥Ç¡¼¥¿²òÀÏ¤ª¤è¤Ó»ë³Ğ²½¥·¥¹¥Æ¥à¤Ç¤¹¡£
+
+%description -l no
+Guppi er et GNOME-basert verktøy for analyse og visualisering av data.
+
 %description -l pl
 Guppi jest ³atwym w u¿yciu graficznym interfejsem do rysowania
 wykresów i obliczeñ statystycznych.
@@ -58,17 +102,40 @@ wykresów i obliczeñ statystycznych.
 Este pacote contém o Guppi, um analisador e visualizador de dados
 baseado no GNOME.
 
+%description -l sv
+Guppi är ett GNOME-baserad dataanalys- och -visualiseringssystem.
+
 %package devel
-Summary:	Guppi includes etc.
+Summary:	Guppi include files
+Summary(cs):	Hlavièkové soubory pro vıvoj aplikací s Guppi
+Summary(de):	Include-Dateien zur Entwicklung von Guppi-basierten Anwendungen
+Summary(es):	Ficheros de inclusión para el desarrollo de aplicaciones Guppi
+Summary(fr):	Fichiers à inclure pour le développement d'applications basées sur Guppi
+Summary(id):	File header untuk develop aplikasi Guppi
+Summary(is):	Hausaskrár fyrir şróun á Guppi forritum
+Summary(it):	File include per lo sviluppo di applicazioni basate su Guppi
+Summary(no):	Headerfiler for utvikling av Guppi-baserte applikasjoner
 Summary(pl):	Guppi - pliki nag³ówkowe
-Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento
+Summary(pt):	Ficheiros de inclusão para desenvolver aplicações do Guppi
+Summary(pt_BR):	Arquivos de inclusão para desenvolvimento
+Summary(ru):	æÁÊÌÙ ÚÁÇÏÌÏ×ËÏ× ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ĞÒÉÌÏÖÅÎÉÊ Guppi
+Summary(sk):	Hlavièkové súbory pre vıvoj Guppi aplikácií
+Summary(sl):	Glave za razvoj programov z Guppi
+Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
+Group(cs):	X11/Vıvojové prostøedky/Knihovny
+Group(da):	X11/Udvikling/Biblioteker
 Group(de):	X11/Entwicklung/Bibliotheken
 Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
+Group(it):	X11/Sviluppo/Librerie
+Group(ja):	X11/³«È¯/¥é¥¤¥Ö¥é¥ê
+Group(no):	X11/Applikasjoner/Biblioteker
 Group(pl):	X11/Programowanie/Biblioteki
 Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(pt):	X11/Desenvolvimento/Bibliotecas
 Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(sv):	X11/Utveckling/Bibliotek
 Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 Requires:	python-devel
@@ -77,6 +144,32 @@ Obsoletes:	libguppi15-devel
 %description devel
 Header files for Guppi.
 
+%description -l cs devel
+Balíèek obsahuje hlavièkové soubory pro vıvoj aplikací s Guppi (GNOME
+Data Analysis and Visualization).
+
+%description -l da devel
+Guppi-devel indeholder headerfiler for udvikling af programmer som
+bruger rutiner fra Guppi.
+
+%description -l de devel
+Das Paket Guppi-devel enthält Header-Dateien für das Guppi-Paket.
+
+%description -l es devel
+El paquete Guppi-devel contiene ficheros de cabecera para el paquete
+Guppi.
+
+%description -l fr devel
+Le paquetage Guppi-devel contient fichiers d'en-tête pour le paquetage
+Guppi.
+
+%description -l it devel
+Il pacchetto Guppi-devel include i file header per il pacchetto Guppi.
+
+%description -l no devel
+Guppi-devel inneholder headerfiler for utvikling av applikasjoner som
+bruker rutiner fra Guppi.
+
 %description -l pl devel
 Pliki nag³ówkowe do Guppi.
 
@@ -84,28 +177,82 @@ Pliki nag³ówkowe do Guppi.
 Este pacote contém os arquivos necessários para desenvolvimento com o
 Guppi.
 
+%description -l sv devel
+Paketet Guppi-devel innehåller huvudfilerna för paketet Guppi.
+
 %package static
 Summary:	Guppi static libraries
+Summary(cs):	Statické knihovny pro vıvoj aplikací s Guppi
+Summary(da):	Statiske biblioteker for udvikling af Guppi-baserede programmer
+Summary(de):	Statischen Bibliotheken zur Entwicklung von Guppi-basierten Anwendungen
+Summary(es):	Bibliotecas estáticas para el desarrollo de aplicaciones Guppi
+Summary(fr):	Bibliothèques statiques pour le développement d'applications basées sur Guppi
+Summary(id):	Static library untuk develop aplikasi Guppi
+Summary(it):	Librerie statiche per lo sviluppo di applicazioni basate su Guppi
+Summary(no):	Statiske biblioteker for utvikling av Guppi-baserte applikasjoner
 Summary(pl):	Biblioteki statyczne Guppi
+Summary(pt):	Bibliotecas estáticas para desenvolver aplicações do Guppi
 Summary(pt_BR):	Bibliotecas estáticas do Guppi
+Summary(ru):	óÔÁÔÉŞÅÓËÉÅ ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ĞÒÉÌÏÖÅÎÉÊ Guppi
+Summary(sk):	Statické kni¾nice pre vıvoj Guppi aplikácií
+Summary(sv):	Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
+Group(cs):	X11/Vıvojové prostøedky/Knihovny
+Group(da):	X11/Udvikling/Biblioteker
 Group(de):	X11/Entwicklung/Bibliotheken
 Group(es):	X11/Desarrollo/Bibliotecas
 Group(fr):	X11/Development/Librairies
+Group(it):	X11/Sviluppo/Librerie
+Group(ja):	X11/³«È¯/¥é¥¤¥Ö¥é¥ê
+Group(no):	X11/Applikasjoner/Biblioteker
 Group(pl):	X11/Programowanie/Biblioteki
 Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(pt):	X11/Desenvolvimento/Bibliotecas
 Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(sv):	X11/Utveckling/Bibliotek
 Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
 Guppi static libraries.
 
+%description -l cs static
+Balíèek obsahuje statické knihovny pro vıvoj aplikací s Guppi (GNOME
+Data Analysis and Visualization).
+
+%description -l da static
+Guppi-static indeholder statiske bibliotek for udvikling af programmer
+som bruger rutiner fra Guppi.
+
+%description -l de static
+Das Paket Guppi-static enthält die statischen Bibliotheken für das
+Guppi-Paket.
+
+%description -l es static
+El paquete Guppi-static contiene las bibliotecas estáticas para el
+paquete Guppi.
+
+%description -l fr static
+Le paquetage Guppi-static contient les bibliothèques statiques pour le
+paquetage Guppi.
+
+%description -l it static
+Il pacchetto Guppi-static include le librerie statiche per il
+pacchetto Guppi.
+
+%description -l no static
+Guppi-static inneholder statiske bibliotek for utvikling av
+applikasjoner som bruker rutiner fra Guppi.
+
 %description static -l pl
 Biblioteki statyczne Guppi.
 
 %description -l pt_BR static
 Bibliotecas estáticas para desenvolvimento baseado no Guppi.
+
+%description -l sv static
+Paketet Guppi-static innehåller de statiska biblioteken för paketet
+Guppi.
 
 %prep
 %setup -q
