@@ -23,6 +23,7 @@ BuildRequires:	python-devel
 BuildRequires:	readline-devel >= 4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
+Obsoletes:	Guppi-static
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -38,6 +39,7 @@ Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
+Obsoletes:	Guppi-static
 
 %description devel
 Header files for Guppi.
@@ -108,8 +110,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/lib*.a
-%{_libdir}/guppi/plug-ins/%{version}/lib*.a
