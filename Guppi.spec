@@ -30,9 +30,12 @@ BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel >= 2.1
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	xml-i18n-tools
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	Guppi-static
+
+%include /usr/lib/rpm/macros.python
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -110,7 +113,7 @@ aclocal -I macros
 autoconf
 automake -a -c -i
 
-CPPFLAGS="-I%{_includedir}/python2.1"; export CPPFLAGS
+CPPFLAGS="-I%{py_incdir}"; export CPPFLAGS
 
 %configure \
 	--enable-gnumeric
