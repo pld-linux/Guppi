@@ -14,7 +14,7 @@ Summary(sv):	GNOME dataanalys och -visualisering
 Summary(zh_CN):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
-Release:	9
+Release:	10
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
