@@ -14,7 +14,7 @@ Summary(sv):	GNOME dataanalys och -visualisering
 Summary(zh_CN):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
-Release:	8
+Release:	9
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
@@ -265,6 +265,7 @@ xml-i18n-toolize --copy --force
 %{__automake}
 
 %configure \
+	--enable-shlib-factory \
 	--enable-gnumeric
 
 %{__make}
@@ -290,8 +291,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
 #%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/guppi-gnumeric.so
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
 %dir %{_libdir}/guppi/plug-ins/%{version}
