@@ -1,6 +1,6 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
-Version:	0.34.4
+Version:	0.34.5
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
@@ -17,6 +17,7 @@ BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	guile-devel
+BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 
@@ -55,6 +56,7 @@ Guppi static libraries.
 %patch -p1
 
 %build
+gettextize --copy --force
 automake
 LDFLAGS="-s"; export LDFLAGS
 %configure
@@ -72,7 +74,7 @@ strip --strip-unneede $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.* \
 
 gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 
-%find_lang %{name} --with-gnome
+%find_lang %{name} --with-gnome --all-name
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
