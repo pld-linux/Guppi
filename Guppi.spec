@@ -106,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.so*
 
 %{_datadir}/guppi
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_applnkdir}/Graphics/*
 
 %files devel
