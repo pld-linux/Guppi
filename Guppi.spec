@@ -18,7 +18,7 @@ Release:	10
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/Guppi/0.40/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/Guppi/0.40/%{name}-%{version}.tar.bz2
 # Source0-md5:	26ec6eb5b6fe7fb4e32ecff64d4f1b16
 Source1:	%{name}.desktop
 Patch0:		%{name}-am_ac.patch
@@ -33,6 +33,7 @@ BuildRequires:	gdk-pixbuf-gnome-devel >= 0.8.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
+BuildRequires:	gnumeric >= 1.0.3
 BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	intltool
 BuildRequires:	libglade-gnome-devel
@@ -40,10 +41,10 @@ BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.2
-BuildRequires:	gnumeric >= 1.0.3
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	sed >= 4.0
 Requires:	ghostscript-fonts-std
 Obsoletes:	libguppi15
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
 %description
@@ -106,7 +107,7 @@ Summary(sk):	Hlavièkové súbory pre vývoj Guppi aplikácií
 Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Obsoletes:	libguppi15-devel
 
 %description devel
@@ -186,7 +187,7 @@ Summary(sk):	Statické kni¾nice pre vývoj Guppi aplikácií
 Summary(sl):	Statiène knji¾nice za razvoj programov z Guppi
 Summary(sv):	Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Guppi static libraries.
@@ -252,9 +253,7 @@ Guppi.
 %patch1 -p1
 
 %build
-sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
-mv -f configure.in.tmp configure.in
-rm -f missing
+sed -i -e 's/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/' configure.in
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
@@ -277,7 +276,7 @@ rm -rf $RPM_BUILD_ROOT
 	appdir=%{_applnkdir}/Graphics \
 	aclocaldir=%{_aclocaldir}
 
-#install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+#install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -306,7 +305,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/guppi
 %{_datadir}/oaf/*.oaf*
 %{_pixmapsdir}/*
-#%%{_applnkdir}/Graphics/*
+#%%{_desktopdir}/*.desktop
 
 %files devel
 %defattr(644,root,root,755)
