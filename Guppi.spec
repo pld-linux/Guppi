@@ -1,12 +1,13 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
-Version:	0.34.5
-Release:	3
+Version:	0.35.1
+Release:	1
 License:	GPL
-Group:		X11/GNOME/Applications
-Group(pl):	X11/GNOME/Aplikacje
+Group:		X11/Applications
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
-Patch0:		Guppi-DESTDIR.patch
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	gnome-print-devel >= 0.13.0
 BuildRequires:	ncurses-devel >= 5.0
@@ -32,8 +33,9 @@ performing statistical manipulations.
 %package devel
 Summary:	Guppi libraries, includes, etc
 Summary(pl):	Guppi - pliki nag³ówkowe, etc
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -45,8 +47,9 @@ Pliki nag³ówkowe etc do Guppi.
 %package static
 Summary:	Guppi static libraries
 Summary(pl):	Biblioteki statyczne Guppi
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
