@@ -1,15 +1,14 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
-Version:	0.34.3
+Version:	0.34.4
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
-Patch0:		Guppi-applnk.patch
-Patch1:		Guppi-DESTDIR.patch
+Patch0:		Guppi-DESTDIR.patch
 URL:		http://www.gnome.org/guppi/
-BuildRequires:	gnome-print-devel >= 0.1.0
+BuildRequires:	gnome-print-devel >= 0.13.0
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel >= 4.1
 BuildRequires:	gnome-libs-devel
@@ -18,7 +17,6 @@ BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	guile-devel
-BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 
@@ -54,8 +52,7 @@ Guppi static libraries.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -p1
 
 %build
 automake
@@ -65,7 +62,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	appdir=%{_applnkdir}/Graphics
 
 strip --strip-unneede $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.* \
 	$RPM_BUILD_ROOT%{_libdir}/guppi/plug-ins/%{version}/lib*.so.*.*
