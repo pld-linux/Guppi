@@ -18,6 +18,7 @@ BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	guile-devel
 BuildRequires:	gettext-devel
+BuildRequires:	python-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 
