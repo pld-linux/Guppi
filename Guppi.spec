@@ -25,7 +25,7 @@ BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 2.1
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -71,13 +71,17 @@ Guppi static libraries.
 %patch1 -p1
 
 %build
+rm missing
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
 automake -a -c -i
 
-%configure --enable-gnumeric
+CPPFLAGS="-I%{_includedir}/python2.1"; export CPPFLAGS
+
+%configure \
+	--enable-gnumeric
 
 %{__make}
 
