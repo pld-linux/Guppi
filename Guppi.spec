@@ -291,7 +291,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %{_bindir}/*
+#%attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
 %dir %{_libdir}/guppi/plug-ins/%{version}
