@@ -1,7 +1,7 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
-Version:	0.35.2
-Release:	2
+Version:	0.35.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -20,9 +20,9 @@ BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	guile-devel
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
-BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel
-BuildRequires:	readline-devel >= 4.1
+BuildRequires:	readline-devel >= 4.2
 BuildRequires:	gdk-pixbuf-devel >= 0.8.0
 BuildRequires:	esound-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
