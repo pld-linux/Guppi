@@ -16,5 +16,6 @@ Exec=guppi
 Icon=gnome-guppi.png
 Terminal=false
 Type=Application
+Categories=Science;Math;
 Encoding=UTF-8
 # vi: encoding=utf-8
