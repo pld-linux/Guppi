@@ -1,76 +1,107 @@
-%define  ver     0.34.2
-%define  rel     1
-%define  prefix  /usr
+Summary:	Guppi - GNOME Plotting Engine
+Name:		Guppi
+Version:	0.34.3
+Release:	1
+License:	GPL
+Group:		X11/GNOME/Applications
+Group(pl):	X11/GNOME/Aplikacje
+Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
+Patch0:		Guppi-applnk.patch
+Patch1:		Guppi-DESTDIR.patch
+URL:		http://www.gnome.org/guppi/
+BuildRequires:	gnome-print-devel >= 0.1.0
+BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	readline-devel >= 4.1
+BuildRequires:	gnome-libs-devel
+BuildRequires:	ORBit-devel
+BuildRequires:	gtk+-devel > 1.2.0
+BuildRequires:	libglade-devel
+BuildRequires:	libxml-devel
+BuildRequires:	guile-devel
+BuildRequires:	automake
+BuildRoot:	/tmp/%{name}-%{version}-root
+Requires:	guile >= 1.3.4
 
-Summary: GNOME Plotting Engine
-Name: Guppi
-Version: %ver
-Release: %rel
-Copyright: GPL
-Group: X11/GNOME/Applications
-Source: ftp://ftp.gnome.org/pub/guppi/Guppi-%{ver}.tar.gz
-Url: http://www.gnome.org/guppi
-BuildRoot: /var/tmp/Guppi-%{ver}-root
-Requires: guile >= 1.3.4
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
-GNOME is the GNU Network Object Model Environment. This powerful environment is both easy to use and easy to configure.
+Guppi is an easy-to-use graphical interface for plotting data and performing
+statistical manipulations.
 
-This package will install Guppi, a GNOME plotting engine.
+%package devel
+Summary:	Guppi libraries, includes, etc
+Summary(pl):	Guppi - pliki nag³ówkowe, etc
+Group:		X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Requires:	%{name} = %{version}
 
-Install this package if you want to test Guppi.
+%description devel
+Header files for Guppi.
 
-%description - pl
-GNOME to skrót od GNU Network Object Model Environment (¶rodowisko sieciowego 
-modelu obiektowego GNU). ¦rodowisko to jest ³atwe zarówno w uzyciu jak i konfiguracji.
-Ten pakiet zainstaluje Guppi, silnik rysuj±cy GNOME.
-nalezy go zainstalowac je¶li chce sie przetestowaæ Guppi.
+%description -l pl devel
+Pliki nag³ówkowe etc do Guppi.
+
+%package static
+Summary:	Guppi static libraries
+Summary(pl):	Biblioteki statyczne Guppi
+Group:		X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
+
+%description static
+Guppi static libraries.
 
 %prep
-%setup
+%setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-%ifarch alpha
-  MYARCH_FLAGS="--host=alpha-redhat-linux"
-%endif
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix $MYARCH_FLAGS --sysconfdir=/etc
+automake
+LDFLAGS="-s"; export LDFLAGS
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT%{prefix} install-strip
+make install DESTDIR=$RPM_BUILD_ROOT
+
+strip --strip-unneede $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.* \
+	$RPM_BUILD_ROOT%{_libdir}/guppi/plug-ins/%{version}/lib*.so.*.*
+
+gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
+
+%find_lang %{name} --with-gnome
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-, root, root)
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%dir %{_libdir}/guppi
+%dir %{_libdir}/guppi/plug-ins
+%dir %{_libdir}/guppi/plug-ins/%{version}
+%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/lib*.so*
 
-%doc AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
+%{_datadir}/guppi
+%{_datadir}/pixmaps/*
+%{_applnkdir}/Graphics/*
 
-%{prefix}/*
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/*
 
-%changelog
-
-* Mon Feb 28 2000 Kenny Graunke <graunke@teleport.com>
-- Upgrade to 0.34.2 (which turns off readline, thank goodness)
-
-* Mon Feb 22 2000 Kenny Graunke <graunke@teleport.com>
-- This 0.34.1-1rl enables readline. If Guppi complains about undefined symbols
-  in libguilereadline.so when you start it, get the readline disabled RPM.
-
-* Mon Feb 22 2000 Kenny Graunke <graunke@teleport.com>
-
-- Updated to 0.34.1 (using repackaged source, ugh), spec file rewrite
-- This 0.34.1 source disables readline due to broken libguilereadline.so
-  problems in every guile 1.3.4 x86 RPM I've seen...
-
-* Wed Jan 26 2000 Conrad Steenberg <conrad@srl.caltech.edu>
-
-- Some Alpha fixes for configure
-- Remove some unneeded stripping foo and just do a 'make install-strip' instead.
-- Move this changelog to the bottom of the file :-)
-
-* Mon Jan 24 2000 Kenny Graunke <graunke@teleport.com>
-
-- First Guppi RPM
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
+%{_libdir}/guppi/plug-ins/%{version}/lib*.a
