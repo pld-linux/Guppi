@@ -1,0 +1,25 @@
+--- Guppi-0.40.3/guppi-gnumeric/Makefile.am~	Sat Jan 12 06:06:07 2002
++++ Guppi-0.40.3/guppi-gnumeric/Makefile.am	Sun Sep 29 17:38:54 2002
+@@ -1,12 +1,4 @@
+-if USING_BONOBO
+-if SUPPORT_GNUMERIC
+-if GUPPI_GNUMERIC_SHLIB
+ lib_LTLIBRARIES = guppi-gnumeric.la
+-else
+-bin_PROGRAMS = guppi-gnumeric
+-endif
+-endif
+-endif
+ 
+ GNUMERIC_GRAPH_IDL_GENERATED = 	\
+ 	GNOME_Gnumeric_Graph-common.c	\
+@@ -66,8 +58,7 @@
+ 
+ guppi_gnumeric_LDADD = $(common_libs)
+ guppi_gnumeric_la_LIBADD = $(guppi_gnumeric_LDADD)
+-guppi_gnumeric_SOURCES = $(common_source) guppi-gnumeric.c guppi-gnumeric.h
+-guppi_gnumeric_la_SOURCES = $(guppi_gnumeric_SOURCES)
++guppi_gnumeric_la_SOURCES = $(common_source) guppi-gnumeric.c guppi-gnumeric.h
+ guppi_gnumeric_la_LDFLAGS = -module -avoid-version
+ 
+ stamp_gnumeric_graph_idl : @GNUMERIC_GRAPH_IDL@
