@@ -18,7 +18,7 @@ Release:	9
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/Guppi/0.40/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-am_ac.patch
 Patch1:		%{name}-am_hack.patch
