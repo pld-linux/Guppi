@@ -1,4 +1,5 @@
 Summary:	Guppi - GNOME Plotting Engine
+Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Name:		Guppi
 Version:	0.35.5
 Release:	6
@@ -40,9 +41,13 @@ Obsoletes:	Guppi-static
 Guppi is an easy-to-use graphical interface for plotting data and
 performing statistical manipulations.
 
+%description -l pl
+Guppi jest ³atwym w u¿yciu graficznym interfejsem do rysowania
+wykresów i obliczeñ statystycznych.
+
 %package devel
-Summary:	Guppi libraries, includes, etc
-Summary(pl):	Guppi - pliki nag³ówkowe, etc
+Summary:	Guppi includes etc.
+Summary(pl):	Guppi - pliki nag³ówkowe
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -53,7 +58,7 @@ Obsoletes:	Guppi-static
 Header files for Guppi.
 
 %description -l pl devel
-Pliki nag³ówkowe etc do Guppi.
+Pliki nag³ówkowe do Guppi.
 
 %package static
 Summary:	Guppi static libraries
@@ -66,13 +71,16 @@ Requires:	%{name}-devel = %{version}
 %description static
 Guppi static libraries.
 
+%description static -l pl
+Biblioteki statyczne Guppi.
+
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
 
 %build
-rm missing
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
