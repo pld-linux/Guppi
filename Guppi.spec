@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	gnumeric	# build with support for GNOME1-based gnumeric
+#
 Summary:	Guppi - GNOME Plotting Engine
 Summary(cs):	Anal齴a a vizualizace dat pod GNOME
 Summary(da):	GNOME-v鎟kt鴍 for analyse og visualisering af data
@@ -14,7 +18,7 @@ Summary(sv):	GNOME dataanalys och -visualisering
 Summary(zh_CN):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
-Release:	10
+Release:	11
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
@@ -23,29 +27,33 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/Guppi/0.40/%{name}-%{version}.ta
 Source1:	%{name}.desktop
 Patch0:		%{name}-am_ac.patch
 Patch1:		%{name}-am_hack.patch
+Patch2:		%{name}-ac.patch
+Patch3:		%{name}-link.patch
+Patch4:		%{name}-am18.patch
 URL:		http://www.gnome.org/guppi/
-BuildRequires:	ORBit-devel
+%{?with_gnumeric:BuildRequires:	ORBit-devel}
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	esound-devel
 BuildRequires:	flex
-BuildRequires:	gdk-pixbuf-gnome-devel >= 0.8.0
+BuildRequires:	gdk-pixbuf-gnome-devel >= 0.11.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
-BuildRequires:	gnumeric >= 1.0.3
+%{?with_gnumeric:BuildRequires:	gnumeric >= 1.0.3}
 BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	intltool
+BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libglade-gnome-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
-BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	readline-devel >= 4.2
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+Requires:	gdk-pixbuf >= 0.11.0
 Requires:	ghostscript-fonts-std
+Requires:	gnome-print >= 0.28
+Requires:	libart_lgpl >= 2.2.0
 Obsoletes:	libguppi15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Guppi is an easy-to-use graphical interface for plotting data and
@@ -108,6 +116,8 @@ Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler f鰎 att utveckla Guppi-baserade till鋗pningar
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	gnome-print-devel >= 0.28
+Requires:	libglade-gnome-devel
 Obsoletes:	libguppi15-devel
 
 %description devel
@@ -251,10 +261,16 @@ Guppi.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+
+mv -f po/{no,nb}.po
+sed -i -e 's/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/' configure.in
+sed -i -e 's/nl no pl/nl nb pl/' configure.in
 
 %build
-sed -i -e 's/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/' configure.in
-xml-i18n-toolize --copy --force
+intltoolize --copy --force
 %{__libtoolize}
 %{__gettextize}
 %{__aclocal} -I %{_aclocaldir}/gnome
@@ -263,8 +279,8 @@ xml-i18n-toolize --copy --force
 %{__automake}
 
 %configure \
-	--enable-shlib-factory \
-	--enable-gnumeric
+	%{!?with_gnumeric:--disable-gnumeric} \
+	--enable-shlib-factory
 
 %{__make}
 
@@ -273,10 +289,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	appdir=%{_applnkdir}/Graphics \
+	appdir=%{_desktopdir} \
 	aclocaldir=%{_aclocaldir}
 
 #install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+
+rm -f $RPM_BUILD_ROOT%{_libdir}/guppi/plug-ins/%{version}/plot/*/*.la
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -289,28 +307,32 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
-#%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %{_libdir}/guppi-gnumeric.so
+%attr(755,root,root) %{_libdir}/libguppi.so.*.*.*
+%attr(755,root,root) %{_libdir}/libguppitank.so.*.*.*
+%{?with_gnumeric:%attr(755,root,root) %{_libdir}/guppi-gnumeric.so}
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
 %dir %{_libdir}/guppi/plug-ins/%{version}
-%dir %{_libdir}/guppi/plug-ins/%{version}/*
-%dir %{_libdir}/guppi/plug-ins/%{version}/*/*
-%{_libdir}/guppi/plug-ins/%{version}/*/*/*.plugin
-%{_libdir}/guppi/plug-ins/%{version}/*/*/*.glade
-%{_libdir}/guppi/plug-ins/%{version}/*/*/*.png
-%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.so*
+%dir %{_libdir}/guppi/plug-ins/%{version}/plot
+%dir %{_libdir}/guppi/plug-ins/%{version}/plot/*
+%{_libdir}/guppi/plug-ins/%{version}/plot/*/*.plugin
+%{_libdir}/guppi/plug-ins/%{version}/plot/*/*.glade
+%{_libdir}/guppi/plug-ins/%{version}/plot/*/*.png
+%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/plot/*/*.so*
 
 %{_datadir}/guppi
-%{_datadir}/oaf/*.oaf*
-%{_pixmapsdir}/*
+%{?with_gnumeric:%{_datadir}/oaf/*.oaf*}
+%{_pixmapsdir}/guppi
+%{_pixmapsdir}/gnome-guppi.png
 #%%{_desktopdir}/*.desktop
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libguppi.so
+%attr(755,root,root) %{_libdir}/libguppitank.so
+%{_libdir}/libguppi.la
+%{_libdir}/libguppitank.la
 %attr(755,root,root) %{_libdir}/libguppiConf.sh
-%{_includedir}/gnome-*/*
-%{_aclocaldir}/*.m4
+%{_includedir}/gnome-1.0/libguppi
+%{_includedir}/gnome-1.0/libguppitank
+%{_aclocaldir}/libguppi.m4
