@@ -1,0 +1,12 @@
+diff -urN Guppi-0.40.3.org/src/libguppiuseful/Makefile.am Guppi-0.40.3/src/libguppiuseful/Makefile.am
+--- Guppi-0.40.3.org/src/libguppiuseful/Makefile.am	Fri Jan 25 10:50:26 2002
++++ Guppi-0.40.3/src/libguppiuseful/Makefile.am	Fri Jan 25 10:59:47 2002
+@@ -91,7 +91,7 @@
+ 	guppi-version.h 		\
+ 	guppi-xml.h
+ 
+-noinst_HEADERS += \
++noinst_HEADERS = \
+ 	guppi-attribute-flavor-private.h
+ 
+ #libguppiuseful_la_LDFLAGS = -version-info $(GUPPI_CURRENT):$(GUPPI_REVISION):$(GUPPI_AGE)
