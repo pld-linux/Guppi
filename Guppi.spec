@@ -23,7 +23,7 @@ BuildRequires:	libxml-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	python-devel
 BuildRequires:	readline-devel >= 4.1
-BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	gdk-pixbuf-devel >= 0.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	Guppi-static
