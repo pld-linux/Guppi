@@ -26,8 +26,8 @@ Requires:	guile >= 1.3.4
 %define		_mandir		%{_prefix}/man
 
 %description
-Guppi is an easy-to-use graphical interface for plotting data and performing
-statistical manipulations.
+Guppi is an easy-to-use graphical interface for plotting data and
+performing statistical manipulations.
 
 %package devel
 Summary:	Guppi libraries, includes, etc
