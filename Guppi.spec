@@ -14,13 +14,14 @@ Summary(sv):	GNOME dataanalys och -visualisering
 Summary(zh_CN):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
-Release:	7
+Release:	8
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-am_ac.patch
 Source1:	%{name}.desktop
+Patch0:		%{name}-am_ac.patch
+Patch1:		%{name}-am_hack.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	ORBit-devel
 BuildRequires:	autoconf
@@ -249,6 +250,7 @@ Guppi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -257,8 +259,8 @@ rm -f missing
 xml-i18n-toolize --copy --force
 %{__libtoolize}
 %{__gettextize}
-aclocal -I %{_aclocaldir}/gnome
-autoheader
+%{__aclocal} -I %{_aclocaldir}/gnome
+%{__autoheader}
 %{__autoconf}
 %{__automake}
 
@@ -269,7 +271,6 @@ autoheader
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
