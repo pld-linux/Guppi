@@ -59,7 +59,6 @@ Guppi static libraries.
 %build
 gettextize --copy --force
 automake
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
@@ -69,9 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	appdir=%{_applnkdir}/Graphics
-
-strip --strip-unneede $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.* \
-	$RPM_BUILD_ROOT%{_libdir}/guppi/plug-ins/%{version}/lib*.so.*.*
 
 gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 
