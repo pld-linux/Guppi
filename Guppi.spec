@@ -31,6 +31,7 @@ BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel >= 2.1
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	rpm-pythonprov
+BuildRequires:	gnumeric
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	libguppi15
@@ -119,7 +120,8 @@ automake -a -c -i
 CPPFLAGS="-I%{py_incdir}"; export CPPFLAGS
 
 %configure \
-	--enable-gnumeric
+	--enable-gnumeric \
+	
 
 %{__make}
 
