@@ -291,8 +291,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%ghost %{_libdir}/libguppi.so.16
-%ghost %{_libdir}/libguppitank.so.16
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
