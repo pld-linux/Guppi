@@ -16,4 +16,5 @@ Exec=guppi
 Icon=gnome-guppi.png
 Terminal=0
 Type=Application
+Encoding=UTF-8
 # vi: encoding=utf-8
