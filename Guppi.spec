@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	Guppi - GNOME Plotting Engine
 Summary(cs):	Analýza a vizualizace dat pod GNOME
 Summary(da):	Gnome-værktøj for analyse og visualisering af data
@@ -32,18 +31,14 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	gtk+-devel > 1.2.0
-BuildRequires:	guile-devel
 BuildRequires:	intltool
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	python-devel >= 2.2
 BuildRequires:	readline-devel >= 4.2
-BuildRequires:	rpm-pythonprov
 BuildRequires:	gnumeric >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	guile >= 1.3.4
 Requires:	ghostscript-fonts-std
 Obsoletes:	libguppi15
 
@@ -111,7 +106,6 @@ Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	python-devel
 Obsoletes:	libguppi15-devel
 
 %description devel
@@ -267,11 +261,8 @@ autoheader
 autoconf
 automake -a -c -f
 
-CPPFLAGS="-I%{py_incdir}"; export CPPFLAGS
-
 %configure \
-	--enable-gnumeric \
-	
+	--enable-gnumeric
 
 %{__make}
 
