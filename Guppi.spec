@@ -1,5 +1,6 @@
 Summary:	Guppi - GNOME Plotting Engine
 Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
+Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
 Version:	0.40.0
 Release:	1
@@ -43,12 +44,22 @@ performing statistical manipulations.
 Guppi jest ³atwym w u¿yciu graficznym interfejsem do rysowania
 wykresów i obliczeñ statystycznych.
 
+%description -l pt_BR
+Este pacote contém o Guppi, um analisador e visualizador de dados
+baseado no GNOME.
+
 %package devel
 Summary:	Guppi includes etc.
 Summary(pl):	Guppi - pliki nag³ówkowe
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 Obsoletes:	Guppi-static
 
@@ -58,12 +69,22 @@ Header files for Guppi.
 %description -l pl devel
 Pliki nag³ówkowe do Guppi.
 
+%description -l pt_BR devel
+Este pacote contém os arquivos necessários para desenvolvimento com o
+Guppi.
+
 %package static
 Summary:	Guppi static libraries
 Summary(pl):	Biblioteki statyczne Guppi
+Summary(pt_BR):	Bibliotecas estáticas do Guppi
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	X11/òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -71,6 +92,9 @@ Guppi static libraries.
 
 %description static -l pl
 Biblioteki statyczne Guppi.
+
+%description -l pt_BR static
+Bibliotecas estáticas para desenvolvimento baseado no Guppi.
 
 %prep
 %setup -q
