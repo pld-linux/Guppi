@@ -1,0 +1,20 @@
+--- Guppi-0.40.0/configure.in.orig	Mon Oct 22 13:09:11 2001
++++ Guppi-0.40.0/configure.in	Mon Oct 22 13:12:28 2001
+@@ -665,7 +665,6 @@
+ src/libguppistat/Makefile
+ src/libguppiplot/Makefile
+ src/libguppibonobo/Makefile
+-src/guppi/Makefile
+ libguppitank/Makefile
+ guppi-gnumeric/Makefile
+ guppi-gnumeric/GNOME_Guppi_Gnumeric.oaf.in
+@@ -710,9 +710,6 @@
+ python-modules/Guppi/data_impl/Makefile
+ doc/Makefile
+ doc/C/Makefile
+-doc/developer-docs/Makefile
+-doc/developer-docs/guppitank/Makefile
+-doc/developer-docs/libguppi/Makefile
+ ],[sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
+ echo "
+ 
