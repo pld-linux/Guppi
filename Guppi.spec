@@ -13,7 +13,7 @@ Summary(sl):	Analiza podatkov in vizualizacija v GNOME
 Summary(sv):	GNOME dataanalys och -visualisering
 Name:		Guppi
 Version:	0.40.3
-Release:	4
+Release:	5
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
@@ -291,6 +291,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%ghost %{_libdir}/libguppi.so.16
+%ghost %{_libdir}/libguppitank.so.16
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
