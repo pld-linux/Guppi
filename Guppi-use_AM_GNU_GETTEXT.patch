@@ -1,9 +1,10 @@
---- Guppi-0.35.4/configure.in~	Sun May  6 10:27:38 2001
-+++ Guppi-0.35.4/configure.in	Wed May  9 03:12:44 2001
-@@ -119,7 +119,7 @@
+diff -Nur Guppi-0.40.0-orig/configure.in Guppi-0.40.0/configure.in
+--- Guppi-0.40.0-orig/configure.in	Fri Oct 19 20:56:00 2001
++++ Guppi-0.40.0/configure.in	Fri Oct 19 20:56:19 2001
+@@ -146,7 +146,7 @@
  
  # Configure gettext
- ALL_LINGUAS="da de es fr is it nl no pt pt_BR ru sv uk pl"
+ ALL_LINGUAS="da de es fr is it nl no pl pt pt_BR ru sk sv tr uk"
 -AM_GNOME_GETTEXT
 +AM_GNU_GETTEXT
  gnomelocaledir='${prefix}/${DATADIRNAME}/locale'
