@@ -5,6 +5,7 @@ Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
 Version:	0.40.3
 Release:	1
+Epoch:		2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
