@@ -9,17 +9,18 @@ Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.gnome.org/guppi/
-BuildRequires:	gnome-print-devel >= 0.13.0
-BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	readline-devel >= 4.1
-BuildRequires:	gnome-libs-devel
 BuildRequires:	ORBit-devel
+BuildRequires:	flex
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gnome-print-devel >= 0.13.0
 BuildRequires:	gtk+-devel > 1.2.0
+BuildRequires:	guile-devel
 BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
-BuildRequires:	guile-devel
-BuildRequires:	gettext-devel
+BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	python-devel
+BuildRequires:	readline-devel >= 4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 
