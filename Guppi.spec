@@ -1,7 +1,7 @@
 Summary:	Guppi - GNOME Plotting Engine
 Name:		Guppi
 Version:	0.35.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -10,6 +10,8 @@ Source0:	ftp://ftp.gnome.org/pub/guppi/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	ORBit-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
@@ -64,7 +66,9 @@ Guppi static libraries.
 
 %build
 gettextize --copy --force
-automake
+aclocal -I macros
+autoconf
+automake -a -c
 %configure
 %{__make}
 
