@@ -1,9 +1,9 @@
 Summary:	Guppi - GNOME Plotting Engine
 Summary(cs):	Analýza a vizualizace dat pod GNOME
-Summary(da):	Gnome-værktøj for analyse og visualisering af data
+Summary(da):	GNOME-værktøj for analyse og visualisering af data
 Summary(de):	GNOME Datenanalyse und -anzeige
-Summary(es):	Análisis y Visualización de Datos de Gnome
-Summary(fr):	Analyseur et visualiseur de données de Gnome
+Summary(es):	Análisis y Visualización de Datos de GNOME
+Summary(fr):	Analyseur et visualiseur de données de GNOME
 Summary(it):	Analisi e Visualizzazione Dati GNOME
 Summary(ja):	GNOME ¥Ù¡¼¥¹¤Î¥Ç¡¼¥¿²òÀÏ¤ª¤è¤Ó»ë³Ð²½
 Summary(no):	GNOME-verktøy for analyse og visualisering av data
@@ -51,10 +51,10 @@ Guppi is an easy-to-use graphical interface for plotting data and
 performing statistical manipulations.
 
 %description -l cs
-Guppi je nástroj pro analýzu a vizualizaci dat pro Gnome.
+Guppi je nástroj pro analýzu a vizualizaci dat pro GNOME.
 
 %description -l da
-Guppi er et Gnome-baseret værktøj for analyse og visualisering af
+Guppi er et GNOME-baseret værktøj for analyse og visualisering af
 data.
 
 %description -l de
@@ -62,11 +62,11 @@ Guppi ist ein GNOME-basiertes System zur Datenanalyse und -anzeige.
 
 %description -l es
 Guppi es un sistema de análisis y visualización de datos basado en
-Gnome.
+GNOME.
 
 %description -l fr
 Guppi est un analyseur de données et un système de visualisation basé
-sur Gnome.
+sur GNOME.
 
 %description -l it
 Guppi è un sistema di analisi e visualizzazione dati basato su GNOME.
