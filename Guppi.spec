@@ -19,12 +19,11 @@ BuildRequires:	libglade-devel
 BuildRequires:	libxml-devel
 BuildRequires:	guile-devel
 BuildRequires:	automake
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 Guppi is an easy-to-use graphical interface for plotting data and performing
