@@ -258,8 +258,8 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 autoheader
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 
 %configure \
 	--enable-gnumeric
