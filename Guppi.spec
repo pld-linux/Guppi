@@ -44,8 +44,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	ghostscript-fonts-std
 Obsoletes:	libguppi15
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Guppi is an easy-to-use graphical interface for plotting data and
