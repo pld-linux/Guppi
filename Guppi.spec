@@ -6,7 +6,7 @@ Summary(es):	Análisis y Visualización de Datos de GNOME
 Summary(fr):	Analyseur et visualiseur de données de GNOME
 Summary(it):	Analisi e Visualizzazione Dati GNOME
 Summary(ja):	GNOME ¥Ù¡¼¥¹¤Î¥Ç¡¼¥¿²òÀÏ¤ª¤è¤Ó»ë³Ð²½
-Summary(no):	GNOME-verktøy for analyse og visualisering av data
+Summary(nb):	GNOME-verktøy for analyse og visualisering av data
 Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Summary(sl):	Analiza podatkov in vizualizacija v GNOME
@@ -74,7 +74,7 @@ Guppi è un sistema di analisi e visualizzazione dati basato su GNOME.
 %description -l ja
 Guppi ¤Ï GNOME ¥Ù¡¼¥¹¤Î¥Ç¡¼¥¿²òÀÏ¤ª¤è¤Ó»ë³Ð²½¥·¥¹¥Æ¥à¤Ç¤¹¡£
 
-%description -l no
+%description -l nb
 Guppi er et GNOME-basert verktøy for analyse og visualisering av data.
 
 %description -l pl
@@ -97,7 +97,7 @@ Summary(fr):	Fichiers à inclure pour le développement d'applications basées sur 
 Summary(id):	File header untuk develop aplikasi Guppi
 Summary(is):	Hausaskrár fyrir þróun á Guppi forritum
 Summary(it):	File include per lo sviluppo di applicazioni basate su Guppi
-Summary(no):	Headerfiler for utvikling av Guppi-baserte applikasjoner
+Summary(nb):	Headerfiler for utvikling av Guppi-baserte applikasjoner
 Summary(pl):	Guppi - pliki nag³ówkowe
 Summary(pt):	Ficheiros de inclusão para desenvolver aplicações do Guppi
 Summary(pt_BR):	Arquivos de inclusão para desenvolvimento
@@ -142,7 +142,7 @@ File header yang dibutuhkan untuk develop aplikasi Guppi.
 Il pacchetto Guppi-devel include i file header necessari per lo
 sviluppo mediante Guppi.
 
-%description devel -l no
+%description devel -l nb
 Guppi-devel inneholder headerfiler for utvikling av applikasjoner som
 bruker rutiner fra Guppi.
 
@@ -177,7 +177,7 @@ Summary(fr):	Bibliothèques statiques pour le développement d'applications basées
 Summary(id):	Static library untuk develop aplikasi Guppi
 Summary(is):	Aðgerðasöfn fyrir þróun á Guppi forritum
 Summary(it):	Librerie statiche per lo sviluppo di applicazioni basate su Guppi
-Summary(no):	Statiske biblioteker for utvikling av Guppi-baserte applikasjoner
+Summary(nb):	Statiske biblioteker for utvikling av Guppi-baserte applikasjoner
 Summary(pl):	Biblioteki statyczne Guppi
 Summary(pt):	Bibliotecas estáticas para desenvolver aplicações do Guppi
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com Guppi
@@ -221,7 +221,7 @@ Static library yang dibutuhkan untuk develop aplikasi Guppi.
 Il pacchetto Guppi-static include le librerie statiche per il
 pacchetto Guppi.
 
-%description static -l no
+%description static -l nb
 Guppi-static inneholder statiske bibliotek for utvikling av
 applikasjoner som bruker rutiner fra Guppi.
 
