@@ -1,16 +1,17 @@
+%include	/usr/lib/rpm/macros.python
 Summary:	Guppi - GNOME Plotting Engine
 Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
-Version:	0.40.2
-Release:	5
+Version:	0.40.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-am_ac.patch
 Source1:	%{name}.desktop
-Patch0:		%{name}-acfix.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	ORBit-devel
 BuildRequires:	autoconf
@@ -31,12 +32,10 @@ BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel >= 2.1
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	rpm-pythonprov
-BuildRequires:	gnumeric
+BuildRequires:	gnumeric >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	libguppi15
-
-%include	/usr/lib/rpm/macros.python
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -113,9 +112,10 @@ rm -f missing
 xml-i18n-toolize --copy --force
 libtoolize --copy --force
 gettextize --copy --force
-aclocal -I macros
+aclocal -I %{_aclocaldir}/gnome
+autoheader
 autoconf
-automake -a -c -i
+automake -a -c
 
 CPPFLAGS="-I%{py_incdir}"; export CPPFLAGS
 
@@ -149,15 +149,14 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
 %dir %{_libdir}/guppi/plug-ins/%{version}
 %dir %{_libdir}/guppi/plug-ins/%{version}/*
 %dir %{_libdir}/guppi/plug-ins/%{version}/*/*
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.plugin
-%{_libdir}/guppi/plug-ins/%{version}/*/*/*.scm
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.glade
 %{_libdir}/guppi/plug-ins/%{version}/*/*/*.png
 %attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.so*
@@ -172,7 +171,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/libguppiConf.sh
-%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.la
 %{_includedir}/gnome-*/*
-%{_includedir}/libguppi
-%{_aclocaldir}/*
+%{_aclocaldir}/*.m4
