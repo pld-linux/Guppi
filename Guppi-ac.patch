@@ -1,0 +1,20 @@
+--- Guppi-0.40.3/configure.in.orig	2005-03-27 16:58:32.239531000 +0200
++++ Guppi-0.40.3/configure.in	2005-03-27 17:24:45.315209296 +0200
+@@ -97,7 +97,7 @@
+ AC_ISC_POSIX
+ AC_STDC_HEADERS
+ 
+-AM_PROG_XML_I18N_TOOLS
++AC_PROG_INTLTOOL
+ 
+ AM_MAINTAINER_MODE
+ 
+@@ -232,7 +232,7 @@
+ 	gnome_xml_vers="unknown"
+ fi
+ 
+-AM_PATH_LIBART(2.2.0)
++PKG_CHECK_MODULES(LIBART, libart-2.0 >= 2.2.0)
+ 
+ AM_PATH_LIBGLADE(,,"gnome")
+ AM_PATH_GNOME_PRINT(0.28.0) 
