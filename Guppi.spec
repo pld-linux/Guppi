@@ -132,7 +132,7 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 	appdir=%{_applnkdir}/Graphics \
 	aclocaldir=%{_aclocaldir}
 
-install ${SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 
 gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 
