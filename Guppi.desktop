@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Guppi
+Name[pt_BR]=Guppi
+Name[da]=Guppi
+Nama[ja]=guppi
+Name[no]=Guppi
+Name[uk]=Guppi
+Comment=Data Plotting and Visualization
+Comment[pt_BR]=TraГar e Visualizar Dados
+Comment[da]=Plotning og visualisering af data
+Comment[ja]=╔г║╪╔©╓н╔в╔М╔ц╔©╓х╩КЁп╡╫
+Comment[no]=Plotting og visualisering av data
+Comment[uk]=Побудова граф╕к╕в та в╕зуал╕зац╕я даних
+Exec=guppi
+Icon=gnome-guppi.png
+Terminal=0
+Type=Application
