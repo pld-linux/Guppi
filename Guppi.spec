@@ -11,9 +11,10 @@ Summary(pl):	Guppi - Silnik Rysuj眂y GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Summary(sl):	Analiza podatkov in vizualizacija v GNOME
 Summary(sv):	GNOME dataanalys och -visualisering
+Summary(zh_CN):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
-Release:	5
+Release:	7
 Epoch:		2
 License:	GPL
 Group:		X11/Applications
@@ -277,8 +278,6 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 
-gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
-
 %find_lang %{name} --with-gnome --all-name
 
 %clean
@@ -289,7 +288,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/guppi
