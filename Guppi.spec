@@ -3,7 +3,7 @@ Summary(pl):	Guppi - Silnik Rysuj±cy GNOME
 Summary(pt_BR):	Analisador e visualizador de dados do GNOME
 Name:		Guppi
 Version:	0.40.2
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -151,7 +151,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %{_libdir}/libguppiConf.sh
 %dir %{_libdir}/guppi
 %dir %{_libdir}/guppi/plug-ins
 %dir %{_libdir}/guppi/plug-ins/%{version}
@@ -164,7 +163,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.so*
 
 %{_datadir}/guppi
-%{_datadir}/oaf/*.oaf
+%{_datadir}/oaf/*.oaf*
 %{_pixmapsdir}/*
 %{_applnkdir}/Graphics/*
 
@@ -172,6 +171,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libguppiConf.sh
+%attr(755,root,root) %{_libdir}/guppi/plug-ins/%{version}/*/*/*.la
 %{_includedir}/gnome-*/*
 %{_includedir}/libguppi
 %{_aclocaldir}/*
