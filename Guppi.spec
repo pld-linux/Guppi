@@ -20,6 +20,12 @@ This package will install Guppi, a GNOME plotting engine.
 
 Install this package if you want to test Guppi.
 
+%description - pl
+GNOME to skrót od GNU Network Object Model Environment (¶rodowisko sieciowego 
+modelu obiektowego GNU). ¦rodowisko to jest ³atwe zarówno w uzyciu jak i konfiguracji.
+Ten pakiet zainstaluje Guppi, silnik rysuj±cy GNOME.
+nalezy go zainstalowac je¶li chce sie przetestowaæ Guppi.
+
 %prep
 %setup
 
