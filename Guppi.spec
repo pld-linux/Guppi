@@ -27,6 +27,7 @@ BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	python-devel
 BuildRequires:	readline-devel >= 4.2
+BuildRequires:	xml-i18n-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	guile >= 1.3.4
 Obsoletes:	Guppi-static
@@ -75,7 +76,9 @@ gettextize --copy --force
 aclocal -I macros
 autoconf
 automake -a -c -i
-%configure
+
+%configure --enable-gnumeric
+
 %{__make}
 
 %install
