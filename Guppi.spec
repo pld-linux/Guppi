@@ -10,6 +10,7 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/Guppi/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch1:		%{name}-acfix.patch
 URL:		http://www.gnome.org/guppi/
 BuildRequires:	ORBit-devel
 BuildRequires:	autoconf
@@ -99,6 +100,7 @@ Bibliotecas estáticas para desenvolvimento baseado no Guppi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
@@ -127,11 +129,11 @@ gzip -9nf AUTHORS BIBLIOGRAPHY ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
