@@ -277,7 +277,7 @@ rm -rf $RPM_BUILD_ROOT
 	appdir=%{_applnkdir}/Graphics \
 	aclocaldir=%{_aclocaldir}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+#install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -305,7 +305,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/guppi
 %{_datadir}/oaf/*.oaf*
 %{_pixmapsdir}/*
-%{_applnkdir}/Graphics/*
+#%{_applnkdir}/Graphics/*
 
 %files devel
 %defattr(644,root,root,755)
