@@ -44,8 +44,8 @@ BuildRequires:	gtk+-devel > 1.2.0
 BuildRequires:	intltool
 BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libglade-gnome-devel
-BuildRequires:	libxml-devel
 BuildRequires:	libtool
+BuildRequires:	libxml-devel
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 Requires:	gdk-pixbuf >= 0.11.0
@@ -116,6 +116,7 @@ Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	automake
 Requires:	gnome-print-devel >= 0.28
 Requires:	libglade-gnome-devel
 Obsoletes:	libguppi15-devel
@@ -270,7 +271,7 @@ sed -i -e 's/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/' configure.in
 sed -i -e 's/nl no pl/nl nb pl/' configure.in
 
 %build
-intltoolize --copy --force
+%{__intltoolize}
 %{__libtoolize}
 %{__gettextize}
 %{__aclocal} -I %{_aclocaldir}/gnome
