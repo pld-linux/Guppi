@@ -116,7 +116,6 @@ Summary(sl):	Glave za razvoj programov z Guppi
 Summary(sv):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	automake
 Requires:	gnome-print-devel >= 0.28
 Requires:	libglade-gnome-devel
 Obsoletes:	libguppi15-devel
