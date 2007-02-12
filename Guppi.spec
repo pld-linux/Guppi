@@ -3,19 +3,19 @@
 %bcond_with	gnumeric	# build with support for GNOME1-based gnumeric
 #
 Summary:	Guppi - GNOME Plotting Engine
-Summary(cs.UTF-8):   Analýza a vizualizace dat pod GNOME
-Summary(da.UTF-8):   GNOME-værktøj for analyse og visualisering af data
-Summary(de.UTF-8):   GNOME Datenanalyse und -anzeige
-Summary(es.UTF-8):   Análisis y Visualización de Datos de GNOME
-Summary(fr.UTF-8):   Analyseur et visualiseur de données de GNOME
-Summary(it.UTF-8):   Analisi e Visualizzazione Dati GNOME
-Summary(ja.UTF-8):   GNOME ベースのデータ解析および視覚化
-Summary(nb.UTF-8):   GNOME-verktøy for analyse og visualisering av data
-Summary(pl.UTF-8):   Guppi - Silnik Rysujący GNOME
-Summary(pt_BR.UTF-8):   Analisador e visualizador de dados do GNOME
-Summary(sl.UTF-8):   Analiza podatkov in vizualizacija v GNOME
-Summary(sv.UTF-8):   GNOME dataanalys och -visualisering
-Summary(zh_CN.UTF-8):   Guppi - GNOME交互式数据分析工具
+Summary(cs.UTF-8):	Analýza a vizualizace dat pod GNOME
+Summary(da.UTF-8):	GNOME-værktøj for analyse og visualisering af data
+Summary(de.UTF-8):	GNOME Datenanalyse und -anzeige
+Summary(es.UTF-8):	Análisis y Visualización de Datos de GNOME
+Summary(fr.UTF-8):	Analyseur et visualiseur de données de GNOME
+Summary(it.UTF-8):	Analisi e Visualizzazione Dati GNOME
+Summary(ja.UTF-8):	GNOME ベースのデータ解析および視覚化
+Summary(nb.UTF-8):	GNOME-verktøy for analyse og visualisering av data
+Summary(pl.UTF-8):	Guppi - Silnik Rysujący GNOME
+Summary(pt_BR.UTF-8):	Analisador e visualizador de dados do GNOME
+Summary(sl.UTF-8):	Analiza podatkov in vizualizacija v GNOME
+Summary(sv.UTF-8):	GNOME dataanalys och -visualisering
+Summary(zh_CN.UTF-8):	Guppi - GNOME交互式数据分析工具
 Name:		Guppi
 Version:	0.40.3
 Release:	11
@@ -99,21 +99,21 @@ Guppi är ett GNOME-baserad dataanalys- och -visualiseringssystem.
 
 %package devel
 Summary:	Guppi include files
-Summary(cs.UTF-8):   Hlavičkové soubory pro vývoj aplikací s Guppi
-Summary(de.UTF-8):   Include-Dateien zur Entwicklung von Guppi-basierten Anwendungen
-Summary(es.UTF-8):   Ficheros de inclusión para el desarrollo de aplicaciones Guppi
-Summary(fr.UTF-8):   Fichiers à inclure pour le développement d'applications basées sur Guppi
-Summary(id.UTF-8):   File header untuk develop aplikasi Guppi
-Summary(is.UTF-8):   Hausaskrár fyrir þróun á Guppi forritum
-Summary(it.UTF-8):   File include per lo sviluppo di applicazioni basate su Guppi
-Summary(nb.UTF-8):   Headerfiler for utvikling av Guppi-baserte applikasjoner
-Summary(pl.UTF-8):   Guppi - pliki nagłówkowe
-Summary(pt.UTF-8):   Ficheiros de inclusão para desenvolver aplicações do Guppi
-Summary(pt_BR.UTF-8):   Arquivos de inclusão para desenvolvimento
-Summary(ru.UTF-8):   Файлы заголовков для разработки приложений Guppi
-Summary(sk.UTF-8):   Hlavičkové súbory pre vývoj Guppi aplikácií
-Summary(sl.UTF-8):   Glave za razvoj programov z Guppi
-Summary(sv.UTF-8):   Huvudfiler för att utveckla Guppi-baserade tillämpningar
+Summary(cs.UTF-8):	Hlavičkové soubory pro vývoj aplikací s Guppi
+Summary(de.UTF-8):	Include-Dateien zur Entwicklung von Guppi-basierten Anwendungen
+Summary(es.UTF-8):	Ficheros de inclusión para el desarrollo de aplicaciones Guppi
+Summary(fr.UTF-8):	Fichiers à inclure pour le développement d'applications basées sur Guppi
+Summary(id.UTF-8):	File header untuk develop aplikasi Guppi
+Summary(is.UTF-8):	Hausaskrár fyrir þróun á Guppi forritum
+Summary(it.UTF-8):	File include per lo sviluppo di applicazioni basate su Guppi
+Summary(nb.UTF-8):	Headerfiler for utvikling av Guppi-baserte applikasjoner
+Summary(pl.UTF-8):	Guppi - pliki nagłówkowe
+Summary(pt.UTF-8):	Ficheiros de inclusão para desenvolver aplicações do Guppi
+Summary(pt_BR.UTF-8):	Arquivos de inclusão para desenvolvimento
+Summary(ru.UTF-8):	Файлы заголовков для разработки приложений Guppi
+Summary(sk.UTF-8):	Hlavičkové súbory pre vývoj Guppi aplikácií
+Summary(sl.UTF-8):	Glave za razvoj programov z Guppi
+Summary(sv.UTF-8):	Huvudfiler för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gnome-print-devel >= 0.28
@@ -180,22 +180,22 @@ av med Guppi.
 
 %package static
 Summary:	Guppi static libraries
-Summary(cs.UTF-8):   Statické knihovny pro vývoj aplikací s Guppi
-Summary(da.UTF-8):   Statiske biblioteker for udvikling af Guppi-baserede programmer
-Summary(de.UTF-8):   Statischen Bibliotheken zur Entwicklung von Guppi-basierten Anwendungen
-Summary(es.UTF-8):   Bibliotecas estáticas para el desarrollo de aplicaciones Guppi
-Summary(fr.UTF-8):   Bibliothèques statiques pour le développement d'applications basées sur Guppi
-Summary(id.UTF-8):   Static library untuk develop aplikasi Guppi
-Summary(is.UTF-8):   Aðgerðasöfn fyrir þróun á Guppi forritum
-Summary(it.UTF-8):   Librerie statiche per lo sviluppo di applicazioni basate su Guppi
-Summary(nb.UTF-8):   Statiske biblioteker for utvikling av Guppi-baserte applikasjoner
-Summary(pl.UTF-8):   Biblioteki statyczne Guppi
-Summary(pt.UTF-8):   Bibliotecas estáticas para desenvolver aplicações do Guppi
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com Guppi
-Summary(ru.UTF-8):   Статические библиотеки для разработки приложений Guppi
-Summary(sk.UTF-8):   Statické knižnice pre vývoj Guppi aplikácií
-Summary(sl.UTF-8):   Statične knjižnice za razvoj programov z Guppi
-Summary(sv.UTF-8):   Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
+Summary(cs.UTF-8):	Statické knihovny pro vývoj aplikací s Guppi
+Summary(da.UTF-8):	Statiske biblioteker for udvikling af Guppi-baserede programmer
+Summary(de.UTF-8):	Statischen Bibliotheken zur Entwicklung von Guppi-basierten Anwendungen
+Summary(es.UTF-8):	Bibliotecas estáticas para el desarrollo de aplicaciones Guppi
+Summary(fr.UTF-8):	Bibliothèques statiques pour le développement d'applications basées sur Guppi
+Summary(id.UTF-8):	Static library untuk develop aplikasi Guppi
+Summary(is.UTF-8):	Aðgerðasöfn fyrir þróun á Guppi forritum
+Summary(it.UTF-8):	Librerie statiche per lo sviluppo di applicazioni basate su Guppi
+Summary(nb.UTF-8):	Statiske biblioteker for utvikling av Guppi-baserte applikasjoner
+Summary(pl.UTF-8):	Biblioteki statyczne Guppi
+Summary(pt.UTF-8):	Bibliotecas estáticas para desenvolver aplicações do Guppi
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com Guppi
+Summary(ru.UTF-8):	Статические библиотеки для разработки приложений Guppi
+Summary(sk.UTF-8):	Statické knižnice pre vývoj Guppi aplikácií
+Summary(sl.UTF-8):	Statične knjižnice za razvoj programov z Guppi
+Summary(sv.UTF-8):	Statiska bibliotek för att utveckla Guppi-baserade tillämpningar
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
