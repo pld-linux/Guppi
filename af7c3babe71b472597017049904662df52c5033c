@@ -1,0 +1,3 @@
+- release 2,
+- added regenerating autoconf, automake files in %build for allow build in
+  automake 1.4b environment (automak, autoconf added to BuildRequires).
