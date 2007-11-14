@@ -49,7 +49,7 @@ BuildRequires:	libxml-devel
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 Requires:	gdk-pixbuf >= 0.11.0
-Requires:	ghostscript-fonts-std
+Requires:	fonts-Type1-urw
 Requires:	gnome-print >= 0.28
 Requires:	libart_lgpl >= 2.2.0
 Obsoletes:	libguppi15
