@@ -222,10 +222,10 @@ paquete Guppi.
 Le paquetage Guppi-static contient les bibliothèques statiques pour le
 paquetage Guppi.
 
-%description devel -l id.UTF-8
+%description static -l id.UTF-8
 Static library yang dibutuhkan untuk develop aplikasi Guppi.
 
-%description devel -l is.UTF-8
+%description static -l is.UTF-8
 Þessi pakki inniheldur aðgerðasöfn til þróunar Guppi biðlurum.
 
 %description static -l it.UTF-8
