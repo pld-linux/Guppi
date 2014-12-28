@@ -36,7 +36,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gdk-pixbuf-gnome-devel >= 0.11.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
 %{?with_gnumeric:BuildRequires:	gnumeric >= 1.0.3}
