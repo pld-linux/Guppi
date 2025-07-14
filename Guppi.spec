@@ -259,11 +259,11 @@ Guppi.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p1
 
 mv -f po/{no,nb}.po
 sed -i -e 's/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/' configure.in
